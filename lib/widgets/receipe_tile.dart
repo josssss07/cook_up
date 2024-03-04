@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cook_up/utils/AppColor.dart';
 
 class RecipeTile extends StatelessWidget {
+  const RecipeTile({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class RecipeTile extends StatelessWidget {
       },
       child: Container(
         height: 90,
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: AppColor.whiteSoft,
           borderRadius: BorderRadius.circular(10),
@@ -40,7 +42,7 @@ class RecipeTile extends StatelessWidget {
                   children: [
                     // Recipe title
                     Container(
-                      margin: EdgeInsets.only(bottom: 12),
+                      margin: const EdgeInsets.only(bottom: 12),
                       child: const Text(
                         'Pancakes',
                         style: TextStyle(fontWeight: FontWeight.w600, fontFamily: 'inter'),
@@ -56,7 +58,7 @@ class RecipeTile extends StatelessWidget {
                           height: 12,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 5),
+                          margin: const EdgeInsets.only(left: 5),
                           child: const Text(
                             'Calories?',
                             style: TextStyle(fontSize: 12),
@@ -71,7 +73,7 @@ class RecipeTile extends StatelessWidget {
                           color: Colors.black,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 5),
+                          margin: const EdgeInsets.only(left: 5),
                           child: const Text(
                             'Time?',
                             style: TextStyle(fontSize: 12),

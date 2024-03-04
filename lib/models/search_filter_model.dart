@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cook_up/utils/AppColor.dart';
 
 class SearchFilterModal extends StatelessWidget {
+  const SearchFilterModal({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Wrap(

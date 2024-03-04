@@ -26,9 +26,9 @@ class _SearchPageState extends State<SearchPage> {
         backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
-        title: Text('Search Recipe', style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w400, fontSize: 16)),
+        title: const Text('Search Recipe', style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w400, fontSize: 16)),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -36,7 +36,7 @@ class _SearchPageState extends State<SearchPage> {
       ),
       body: ListView(
         shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           // Section 1 - Search
           Container(
@@ -49,7 +49,7 @@ class _SearchPageState extends State<SearchPage> {
               children: [
                 // Search Bar
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -57,7 +57,7 @@ class _SearchPageState extends State<SearchPage> {
                       Expanded(
                         child: Container(
                           height: 50,
-                          margin: EdgeInsets.only(right: 15),
+                          margin: const EdgeInsets.only(right: 15),
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: AppColor.primarySoft),
                           child: TextField(
                             controller: searchInputController,
@@ -65,25 +65,25 @@ class _SearchPageState extends State<SearchPage> {
                               print(searchInputController.text);
                               setState(() {});
                             },
-                            style: TextStyle(color: const Color.fromARGB(255, 62, 61, 61), fontSize: 16, fontWeight: FontWeight.w400),
+                            style: const TextStyle(color: Color.fromARGB(255, 62, 61, 61), fontSize: 16, fontWeight: FontWeight.w400),
                             maxLines: 1,
                             textInputAction: TextInputAction.search,
                             decoration: InputDecoration(
                               hintText: 'What do you want to eat?',
-                              hintStyle: TextStyle(color: Color.fromARGB(255, 45, 44, 44).withOpacity(0.2)),
-                              prefixIconConstraints: BoxConstraints(maxHeight: 20),
-                              contentPadding: EdgeInsets.symmetric(horizontal: 17),
+                              hintStyle: TextStyle(color: const Color.fromARGB(255, 45, 44, 44).withOpacity(0.2)),
+                              prefixIconConstraints: const BoxConstraints(maxHeight: 20),
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 17),
                               focusedBorder: InputBorder.none,
                               border: InputBorder.none,
                               prefixIcon: Visibility(
                                 visible: (searchInputController.text.isEmpty) ? true : false,
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 10, right: 12),
+                                  margin: const EdgeInsets.only(left: 10, right: 12),
                                   child: Image.network(
                                     'assets/icons/search-interface-symbol.png',
                                     width: 20,
                                     height: 20,
-                                    color: Color.fromARGB(255, 62, 60, 60),
+                                    color: const Color.fromARGB(255, 62, 60, 60),
                                   ),
                                 ),
                               ),
@@ -97,9 +97,9 @@ class _SearchPageState extends State<SearchPage> {
                           showModalBottomSheet(
                               context: context,
                               backgroundColor: Colors.white,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+                              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
                               builder: (context) {
-                                return SearchFilterModal();
+                                return const SearchFilterModal();
                               });
                         },
                         child: Container(
@@ -114,7 +114,7 @@ class _SearchPageState extends State<SearchPage> {
                             'assets/icons/edit.png',
                             width: 30,
                             height: 30,
-                            color: Color.fromARGB(255, 200, 196, 196),
+                            color: const Color.fromARGB(255, 200, 196, 196),
                             ),
                         ),
                       )
@@ -124,16 +124,16 @@ class _SearchPageState extends State<SearchPage> {
                 // Search Keyword Recommendation
                 Container(
                   height: 60,
-                  margin: EdgeInsets.only(top: 8),
+                  margin: const EdgeInsets.only(top: 8),
                   child: ListView.separated(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
-                    physics: BouncingScrollPhysics(),
-                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    physics: const BouncingScrollPhysics(),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     // itemCount: popularRecipeKeyword.length,
                     itemCount: 10,
                     separatorBuilder: (context, index) {
-                      return SizedBox(width: 8);
+                      return const SizedBox(width: 8);
                     },
                     itemBuilder: (context, index) {
                       return Container(
@@ -161,14 +161,14 @@ class _SearchPageState extends State<SearchPage> {
           ),
           // Section 2 - Search Result
           Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             width: MediaQuery.of(context).size.width,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(bottom: 15),
+                  margin: const EdgeInsets.only(bottom: 15),
                   child: const Text(
                     'This is the result of your search..',
                     style: TextStyle(color: Colors.grey, fontSize: 12),
@@ -178,12 +178,12 @@ class _SearchPageState extends State<SearchPage> {
                   shrinkWrap: true,
                   // itemCount: searchResult.length,
                   itemCount: 1,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   separatorBuilder: (context, index) {
-                    return SizedBox(height: 16);
+                    return const SizedBox(height: 16);
                   },
                   itemBuilder: (context, index) {
-                    return RecipeTile(
+                    return const RecipeTile(
                       // data: searchResult[index],
                       
                     );
