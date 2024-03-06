@@ -20,12 +20,12 @@ Future<List<dynamic>> fetchRecipesByIngredients(String ingredients) async {
 }
 
 // Example usage
-void main() async {
-  final ingredients = "chicken, rice, vegetables";
-  final recipes = await fetchRecipesByIngredients(ingredients);
+// void main() async {
+//   final ingredients = "chicken, rice, vegetables";
+//   final recipes = await fetchRecipesByIngredients(ingredients);
 
-  // Process the recipes data here (e.g., print details)
-  for (final recipe in recipes) {
-    print(recipe["title"]);
-  }
-}
+//   // Process the recipes data here (e.g., print details)
+//   for (final recipe in recipes) {
+//     print(recipe["title"]);
+//   }
+// }
