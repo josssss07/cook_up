@@ -15,7 +15,7 @@ Future<List<dynamic>> fetchRecipesByIngredients(String ingredients) async {
     final data = jsonDecode(response.body)["results"] as List;
     return data;
   } else {
-    throw Exception("Failed to fetch recipes");
+    throw Exception("Failed to fetch recipes, try again later");
   }
 }
 
