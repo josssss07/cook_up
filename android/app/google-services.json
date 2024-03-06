@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "266695692193",
+    "project_id": "meal-match-93f06",
+    "storage_bucket": "meal-match-93f06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266695692193:android:a41b2216c66cf0e098c5e0",
+        "android_client_info": {
+          "package_name": "com.example.cook_up"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBna8FRvuoNaXMrd8IT_K8kfM8morUuj5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
