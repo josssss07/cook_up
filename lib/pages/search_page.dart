@@ -25,7 +25,7 @@ class _SearchPageState extends State<SearchPage> {
             style: TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
-                fontSize: 16)),
+                fontSize: 20)),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
@@ -55,7 +55,7 @@ class _SearchPageState extends State<SearchPage> {
                           margin: const EdgeInsets.only(right: 15),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: AppColor.primarySoft),
+                              color: AppColor.secondarybg),
                           child: TextField(
                             controller: searchInputController,
                             onChanged: (value) {
@@ -63,7 +63,7 @@ class _SearchPageState extends State<SearchPage> {
                               setState(() {});
                             },
                             style: const TextStyle(
-                                color: Color.fromARGB(255, 62, 61, 61),
+                                color: Color.fromARGB(255, 246, 246, 246),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400),
                             maxLines: 1,
@@ -71,7 +71,7 @@ class _SearchPageState extends State<SearchPage> {
                             decoration: InputDecoration(
                               hintText: 'What do you want to eat?',
                               hintStyle: TextStyle(
-                                  color: const Color.fromARGB(255, 45, 44, 44)
+                                  color: Color.fromARGB(255, 255, 255, 255)
                                       .withOpacity(0.2)),
                               prefixIconConstraints:
                                   const BoxConstraints(maxHeight: 20),
@@ -88,7 +88,8 @@ class _SearchPageState extends State<SearchPage> {
                         onTap: () {
                           showModalBottomSheet(
                               context: context,
-                              backgroundColor: Colors.white,
+                              // backgroundColor: Colors.white,
+                              backgroundColor: AppColor.secondarybg,
                               shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(20),
@@ -103,7 +104,7 @@ class _SearchPageState extends State<SearchPage> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: AppColor.secondary,
+                            color: AppColor.secondarybg,
                           ),
                           child: Image.asset(
                             'assets/icons/edit.png',
@@ -140,15 +141,16 @@ class _SearchPageState extends State<SearchPage> {
                           },
                           style: OutlinedButton.styleFrom(
                             side: BorderSide(
-                                color: Colors.white.withOpacity(0.15),
+                                color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.9),
                                 width: 1),
                           ),
                           child: Text(
                             // popularRecipeKeyword[index],
                             'Index of popular recipe',
                             style: TextStyle(
-                                color: Colors.white.withOpacity(0.7),
-                                fontWeight: FontWeight.w400),
+                                color: Color.fromARGB(255, 38, 37, 37).withOpacity(0.7),
+                                // backgroundColor: const Color.fromARGB(255, 87, 84, 84),
+                                fontWeight: FontWeight.w400, fontSize: 16),
                           ),
                         ),
                       );
@@ -162,6 +164,7 @@ class _SearchPageState extends State<SearchPage> {
           Container(
             padding: const EdgeInsets.all(16),
             width: MediaQuery.of(context).size.width,
+            color: AppColor.primarySoft,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,13 +173,13 @@ class _SearchPageState extends State<SearchPage> {
                   margin: const EdgeInsets.only(bottom: 15),
                   child: const Text(
                     'This is the result of your search..',
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                    style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                 ),
                 ListView.separated(
                   shrinkWrap: true,
                   // itemCount: searchResult.length,
-                  itemCount: 1,
+                  itemCount: 5,
                   physics: const NeverScrollableScrollPhysics(),
                   separatorBuilder: (context, index) {
                     return const SizedBox(height: 16);

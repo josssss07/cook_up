@@ -14,8 +14,8 @@ class RecipeTile extends StatelessWidget {
         height: 90,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: AppColor.whiteSoft,
-          borderRadius: BorderRadius.circular(10),
+          color: Color.fromARGB(255, 26, 26, 28),
+          borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
           children: [
@@ -24,7 +24,7 @@ class RecipeTile extends StatelessWidget {
               width: 70,
               height: 70,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(10),
                 color: const Color.fromRGBO(96, 125, 139, 1),
                 image: const DecorationImage(
                   image: AssetImage('assets/images/pancakes.jpg'),
@@ -45,7 +45,7 @@ class RecipeTile extends StatelessWidget {
                       margin: const EdgeInsets.only(bottom: 12),
                       child: const Text(
                         'Pancakes',
-                        style: TextStyle(fontWeight: FontWeight.w600, fontFamily: 'inter'),
+                        style: TextStyle(fontWeight: FontWeight.w600, fontFamily: 'inter', color: Colors.white),
                       ),
                     ),
                     // Recipe Calories and Time
@@ -53,7 +53,7 @@ class RecipeTile extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/images/pancakes.jpg',
-                          color: Colors.black,
+                          color: Colors.white,
                           width: 12,
                           height: 12,
                         ),
@@ -61,7 +61,7 @@ class RecipeTile extends StatelessWidget {
                           margin: const EdgeInsets.only(left: 5),
                           child: const Text(
                             'Calories?',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: 12, color: Colors.white),
                           ),
                         ),
                         const SizedBox(
@@ -70,13 +70,13 @@ class RecipeTile extends StatelessWidget {
                         const Icon(
                           Icons.alarm,
                           size: 14,
-                          color: Colors.black,
+                          color: Color.fromARGB(255, 255, 255, 255),
                         ),
                         Container(
                           margin: const EdgeInsets.only(left: 5),
                           child: const Text(
                             'Time?',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: 12, color: Colors.white),
                           ),
                         ),
                       ],
