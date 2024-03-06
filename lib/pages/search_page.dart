@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:hungry/models/core/recipe.dart';
-// import 'package:hungry/models/helper/recipe_helper.dart';
 import 'package:cook_up/utils/AppColor.dart';
 import 'package:cook_up/models/search_filter_model.dart';
 import 'package:cook_up/widgets/receipe_tile.dart';
@@ -16,8 +13,6 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   TextEditingController searchInputController = TextEditingController();
-  //final List<Recipe> searchResult = RecipeHelper.sarchResultRecipe;
-
   @override
   Widget build(BuildContext context) {
     print(searchInputController.text.isEmpty);

@@ -8,6 +8,7 @@ void main() async {
     systemNavigationBarColor: Colors.black,
     systemNavigationBarIconBrightness: Brightness.light,
   ));
+
   runApp(const MyApp());
 }
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Open Sans',
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const SearchPage(),
+      home: AppBar(),
     );
   }
 }
