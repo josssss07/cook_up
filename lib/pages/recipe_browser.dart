@@ -50,8 +50,13 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                 String recipeName = data['name'];
 
                 return ListTile(
-                  title: Text(recipeName),
-                );
+                    title: Container(
+                  width: MediaQuery.sizeOf(context).aspectRatio,
+                  child: Text(
+                    recipeName,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ));
               },
             );
           } else {

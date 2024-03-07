@@ -24,16 +24,16 @@ class _AppbarState extends State<Appbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GNav(
-          rippleColor: const Color.fromARGB(255, 179, 60, 60)!,
-          hoverColor: const Color.fromARGB(255, 209, 29, 29)!,
-          gap: 8,
+      bottomNavigationBar: GNav(
+          rippleColor: Color.fromARGB(255, 192, 155, 34)!,
+          hoverColor: Color.fromARGB(255, 205, 192, 11)!,
+          gap: 6,
           activeColor: Colors.black,
           iconSize: 24,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           duration: Duration(milliseconds: 400),
-          tabBackgroundColor: const Color.fromARGB(255, 140, 33, 33)!,
-          color: const Color.fromARGB(255, 163, 48, 48),
+          tabBackgroundColor: Color.fromARGB(255, 183, 98, 25)!,
+          color: Color.fromARGB(255, 188, 147, 33),
           tabs: [
             GButton(
               icon: Icons.search,
