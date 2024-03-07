@@ -1,0 +1,14 @@
+procedure for starting firebase (for easy reference)
+
+$ npm install
+
+$ firebase login
+
+$ dart pub global activate flutterfire_cli
+
+#ignore this one if you don't need it
+$ export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+#select meal-match project
+
+#unselect macos and leave the rest

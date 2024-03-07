@@ -1,3 +1,4 @@
+import 'package:cook_up/pages/recipe_browser.dart';
 import 'package:cook_up/pages/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Open Sans',
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: SearchPage(),
+      // home: SearchPage(),
+      home: RecipeBrowser(), //until navbar is completedw
     );
   }
 }
