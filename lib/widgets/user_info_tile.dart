@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:cook_up/utils/AppColor.dart';
 
