@@ -25,7 +25,7 @@ class RecipeViewer extends StatelessWidget {
                 recipeName,
                 style: TextStyle(
                   color: Colors.grey[100],
-                  fontSize: 20
+                  fontSize: 18
                 ),
               ),
               Icon(
