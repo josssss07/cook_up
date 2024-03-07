@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:cook_up/utils/AppColor.dart';
 import 'package:flutter/services.dart';
 
+import '../widgets/recipe_viewer_tiles.dart';
+
 class RecipeBrowser extends StatefulWidget {
   const RecipeBrowser({super.key});
 
@@ -51,18 +53,26 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                 int recipeindex = data['id'];
 
                 return ListTile(
-                    title: GestureDetector(
-                  onTap: () {
-                    print(recipeindex);
-                  },
-                  child: SizedBox(
-                    width: MediaQuery.sizeOf(context).aspectRatio,
-                    child: Text(
-                      recipeName,
-                      style: const TextStyle(color: Colors.white),
-                    ),
+                  title: GestureDetector(
+                    onTap: () {
+                      print(recipeindex);
+                    },
+                    child: RecipeViewer(recipeName: recipeName),
                   ),
-                ));
+                );
+                // return ListTile(
+                //     title: GestureDetector(
+                //   onTap: () {
+                //     print(recipeindex);
+                //   },
+                //   child: SizedBox(
+                //     width: MediaQuery.sizeOf(context).aspectRatio,
+                //     child: Text(
+                //       recipeName,
+                //       style: const TextStyle(color: Colors.white),
+                //     ),
+                //   ),
+                // ));
               },
             );
           } else {
