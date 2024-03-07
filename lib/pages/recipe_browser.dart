@@ -48,13 +48,19 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                 Map<String, dynamic> data =
                     documentSnapshot.data() as Map<String, dynamic>;
                 String recipeName = data['name'];
+                int recipeindex = data['id'];
 
                 return ListTile(
-                    title: Container(
-                  width: MediaQuery.sizeOf(context).aspectRatio,
-                  child: Text(
-                    recipeName,
-                    style: TextStyle(color: Colors.white),
+                    title: GestureDetector(
+                  onTap: () {
+                    print(recipeindex);
+                  },
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).aspectRatio,
+                    child: Text(
+                      recipeName,
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ));
               },
