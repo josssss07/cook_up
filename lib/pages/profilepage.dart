@@ -14,13 +14,12 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: AppColor.primarySoft,
         elevation: 2,
         centerTitle: true,
-        title: const Text('My Profile', style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w400, fontSize: 16, color: Colors.white)),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
+        title: const Text('My Profile', 
+          style: TextStyle(
+            fontFamily: 'inter', 
+            fontWeight: FontWeight.w400, 
+            fontSize: 16)
+            ),
         actions: [
           TextButton(
             onPressed: () {},

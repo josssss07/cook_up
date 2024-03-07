@@ -1,10 +1,11 @@
-
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_field
 
-import 'package:cook_up/pages/ingrident_search.dart';
+import 'package:cook_up/pages/profilepage.dart';
 import 'package:cook_up/pages/search_page.dart';
+import 'package:cook_up/widgets/recipe_viewer_tiles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import '../pages/recipe_browser.dart';
 
 class Appbar extends StatefulWidget {
   const Appbar({Key? key}) : super(key: key);
@@ -17,7 +18,8 @@ class _AppbarState extends State<Appbar> {
   int _indexSelected = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     SearchPage(),
-    SearchIngridients(),
+    RecipeBrowser(),
+    ProfilePage()
   ];
 
   @override
@@ -25,6 +27,7 @@ class _AppbarState extends State<Appbar> {
     return Scaffold(
       body: _widgetOptions.elementAt(_indexSelected),
       bottomNavigationBar: GNav(
+        haptic: true,
         rippleColor: Color.fromARGB(255, 192, 155, 34),
         hoverColor: Color.fromARGB(255, 205, 192, 11),
         gap: 6,
@@ -53,10 +56,17 @@ class _AppbarState extends State<Appbar> {
               });
             },
           ),
+          GButton(
+            icon: Icons.person,
+            text: 'Profile',
+            onPressed: () {
+              setState(() {
+                _indexSelected = 2;
+              });
+            },
+          )
         ],
       ),
     );
   }
 }
-
-
