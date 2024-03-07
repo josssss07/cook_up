@@ -71,7 +71,7 @@ class _SearchPageState extends State<SearchPage> {
                             decoration: InputDecoration(
                               hintText: 'What do you want to eat?',
                               hintStyle: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255)
+                                  color: const Color.fromARGB(255, 255, 255, 255)
                                       .withOpacity(0.2)),
                               prefixIconConstraints:
                                   const BoxConstraints(maxHeight: 20),
@@ -141,14 +141,14 @@ class _SearchPageState extends State<SearchPage> {
                           },
                           style: OutlinedButton.styleFrom(
                             side: BorderSide(
-                                color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.9),
+                                color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.9),
                                 width: 1),
                           ),
                           child: Text(
                             // popularRecipeKeyword[index],
                             'Index of popular recipe',
                             style: TextStyle(
-                                color: Color.fromARGB(255, 38, 37, 37).withOpacity(0.7),
+                                color: const Color.fromARGB(255, 38, 37, 37).withOpacity(0.7),
                                 // backgroundColor: const Color.fromARGB(255, 87, 84, 84),
                                 fontWeight: FontWeight.w400, fontSize: 16),
                           ),

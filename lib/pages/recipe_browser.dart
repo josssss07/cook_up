@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cook_up/services/firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:cook_up/utils/AppColor.dart';
-import 'package:cook_up/models/search_filter_model.dart';
-import 'package:cook_up/widgets/receipe_tile.dart';
 import 'package:flutter/services.dart';
 
 class RecipeBrowser extends StatefulWidget {
@@ -55,11 +53,11 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                   onTap: () {
                     print(recipeindex);
                   },
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.sizeOf(context).aspectRatio,
                     child: Text(
                       recipeName,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ));

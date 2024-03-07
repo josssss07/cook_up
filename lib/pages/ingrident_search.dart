@@ -10,7 +10,7 @@ class SearchIngridients extends StatefulWidget {
 class _SearchIngridientsState extends State<SearchIngridients> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text("THIS IS TEXT",),
       ),

@@ -25,14 +25,14 @@ class _AppbarState extends State<Appbar> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: GNav(
-          rippleColor: Color.fromARGB(255, 192, 155, 34)!,
-          hoverColor: Color.fromARGB(255, 205, 192, 11)!,
+          rippleColor: Color.fromARGB(255, 192, 155, 34),
+          hoverColor: Color.fromARGB(255, 205, 192, 11),
           gap: 6,
           activeColor: Colors.black,
           iconSize: 24,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           duration: Duration(milliseconds: 400),
-          tabBackgroundColor: Color.fromARGB(255, 183, 98, 25)!,
+          tabBackgroundColor: Color.fromARGB(255, 183, 98, 25),
           color: Color.fromARGB(255, 188, 147, 33),
           tabs: [
             GButton(
