@@ -19,14 +19,22 @@ class UserInfoTile extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(left: 20),
-            child: Text('$label', style: TextStyle(color: AppColor.primary, fontSize: 12)),
+            child: Text('$label', style: TextStyle(color: AppColor.primary, fontSize: 16)),
           ),
           Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                color: AppColor.primary,
+                width: 0.5,
+              ),
+              color: AppColor.primarySoft,
+            ),
             margin: EdgeInsets.only(top: 6),
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.all(16),
-            color: valueBackground ?? AppColor.whiteSoft,
-            child: Text('$value', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, fontFamily: 'inter')),
+            // color: valueBackground ?? AppColor.primarySoft,
+            child: Text('$value', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, fontFamily: 'inter', color: Colors.white)),
           )
         ],
       ),

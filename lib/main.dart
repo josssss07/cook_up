@@ -1,5 +1,7 @@
+import 'package:cook_up/pages/profilepage.dart';
 import 'package:cook_up/pages/recipe_browser.dart';
 import 'package:cook_up/pages/search_page.dart';
+import 'package:cook_up/utils/AppColor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -32,9 +34,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Open Sans',
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: AppColor.primarySoft,
       ),
-      home: RecipeBrowser(), //until navbar is completedw
+      home: ProfilePage(), //until navbar is completedw
     );
   }
 }
