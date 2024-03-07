@@ -4,6 +4,8 @@ import 'package:cook_up/utils/AppColor.dart';
 import 'package:cook_up/widgets/user_info_tile.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

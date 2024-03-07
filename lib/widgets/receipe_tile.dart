@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cook_up/utils/AppColor.dart';
 
 class RecipeTile extends StatelessWidget {
   const RecipeTile({super.key});
@@ -14,7 +13,7 @@ class RecipeTile extends StatelessWidget {
         height: 90,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 26, 26, 28),
+          color: const Color.fromARGB(255, 26, 26, 28),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(

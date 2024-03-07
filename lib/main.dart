@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'utils/app_bar.dart';
 // import 'package:hungry/views/screens/auth/welcome_page.dart';
 
 void main() async {
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Open Sans',
         scaffoldBackgroundColor: AppColor.primarySoft,
       ),
-      home: ProfilePage(), //until navbar is completedw
+      home: ProfilePage(), 
     );
   }
 }
