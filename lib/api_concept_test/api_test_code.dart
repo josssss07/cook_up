@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 // Replace with your actual API key
-const String apiKey = "YOUR_API_KEY";
+const String apiKey = "YOUR API KEY";
 
 // Function to fetch recipes based on ingredients
 Future<List<dynamic>> fetchRecipesByIngredients(String ingredients) async {
