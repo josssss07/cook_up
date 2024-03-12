@@ -3,7 +3,7 @@ import 'package:cook_up/utils/AppColor.dart';
 import 'package:cook_up/models/search_filter_model.dart';
 import 'package:cook_up/widgets/receipe_tile.dart';
 import 'package:flutter/services.dart';
-
+import 'package:cook_up/fetch_api_data/fetch_ing.dart';
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
 
@@ -12,6 +12,20 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
+ var searchResult;
+ bool shouldLisn  = false;
+  SpoonacularRecipes spoonacularRecipes = SpoonacularRecipes();
+  fetchData(String searchText) async {
+    try {
+      searchResult = await spoonacularRecipes.fetchRecipesByIngredients(searchText);
+        print("ran");
+        print(searchResult);
+    } catch (e) {
+      print("Error fetching data: $e");
+      // Handle error appropriately, e.g., show an error message
+    }
+  }
+
   TextEditingController searchInputController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -58,8 +72,14 @@ class _SearchPageState extends State<SearchPage> {
                               color: AppColor.secondarybg),
                           child: TextField(
                             controller: searchInputController,
-                            onChanged: (value) {
-                              print(searchInputController.text);
+                            onChanged: (value)async {
+
+                              Future.delayed(const Duration(seconds: 2), (){
+
+                                fetchData(searchInputController.text);
+                              });
+
+
                               setState(() {});
                             },
                             style: const TextStyle(
@@ -178,15 +198,15 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                 ListView.separated(
                   shrinkWrap: true,
-                  // itemCount: searchResult.length,
-                  itemCount: 5,
+                   itemCount: searchResult.length(),
+                  //itemCount: 5,
                   physics: const NeverScrollableScrollPhysics(),
                   separatorBuilder: (context, index) {
                     return const SizedBox(height: 16);
                   },
                   itemBuilder: (context, index) {
-                    return const RecipeTile(
-                        // data: searchResult[index],
+                    return  RecipeTile(
+                         data: searchResult[index],
 
                         );
                   },
