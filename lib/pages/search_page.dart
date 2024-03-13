@@ -8,6 +8,9 @@ import 'package:flutter/services.dart';
 import 'package:cook_up/fetch_api_data/fetch_ing.dart';
 import 'package:cook_up/fetch_api_data/recipie_details.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:cook_up/HiveManager.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -39,6 +42,7 @@ class _SearchPageState extends State<SearchPage> {
   TextEditingController searchInputController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+
     print(searchInputController.text.isEmpty);
     return Scaffold(
       appBar: AppBar(

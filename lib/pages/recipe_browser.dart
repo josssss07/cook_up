@@ -5,6 +5,9 @@ import 'package:cook_up/services/firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:cook_up/utils/AppColor.dart';
 import 'package:flutter/services.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:cook_up/HiveManager.dart';
 
 import '../widgets/recipe_viewer_tiles.dart';
 

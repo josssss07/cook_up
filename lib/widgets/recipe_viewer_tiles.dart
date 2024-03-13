@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, must_be_immutable, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:cook_up/HiveManager.dart';
 
 class RecipeViewer extends StatelessWidget {
   RecipeViewer({super.key, required this.recipeName});

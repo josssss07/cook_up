@@ -11,6 +11,8 @@ dependencies:
   firebase_core: ^2.24.2
   flutter:
     sdk: flutter
+  hive:
+  hive_flutter:
   flutter_svg: ^2.0.10+1
   google_nav_bar: ^5.0.6
   http: ^1.2.1
@@ -19,6 +21,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  hive_generator:
+  build_runner:
   flutter_lints: ^2.0.0
 
 flutter:

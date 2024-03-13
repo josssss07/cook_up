@@ -2,12 +2,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:cook_up/utils/AppColor.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:cook_up/HiveManager.dart';
 
 class SearchFilterModal extends StatelessWidget {
   const SearchFilterModal({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var myBox = HiveManager.myBox;
+    var box = myBox.get("Recipes");
+    print(box);
     return Wrap(
       children: [
         // Section 1 - Header
