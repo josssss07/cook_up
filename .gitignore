@@ -29,7 +29,6 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
-/build/
 
 # Symbolication related
 app.*.symbols
@@ -103,7 +102,6 @@ analysis_benchmark.json
 .pub-preload-cache/
 .pub-cache/
 .pub/
-build/
 flutter_*.png
 linked_*.ds
 unlinked.ds
@@ -183,4 +181,4 @@ app.*.symbols
 !.vscode/settings.json
 
 node_modules
-lib/firebase_options.dart
+/build
