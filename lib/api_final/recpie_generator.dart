@@ -19,6 +19,13 @@ class _RecipeGeneratorState extends State<RecipeGenerator> {
         title: const Text('Enter your ingridients: '),
         centerTitle: true,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(
+          Icons.search,
+          color: Colors.black,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(8),
