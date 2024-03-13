@@ -34,8 +34,8 @@ class RecipeTileExtended extends StatelessWidget {
                       onTap: () {
                         showModalBottomSheet<void>(
                           context: context,
-                          builder: (context) => SizedBox(
-                            height: 800,
+                          builder: (context) => Container(
+                            height: 900,
                             child: Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: SingleChildScrollView(
