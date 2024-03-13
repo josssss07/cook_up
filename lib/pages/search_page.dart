@@ -1,10 +1,13 @@
 
+import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:cook_up/models/search_filter_model.dart';
 import 'package:cook_up/widgets/receipe_tile.dart';
 import 'package:flutter/services.dart';
 import 'package:cook_up/fetch_api_data/fetch_ing.dart';
 import 'package:cook_up/fetch_api_data/recipie_details.dart';
+import 'package:flutter/widgets.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -16,8 +19,10 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   var searchResult;
   bool shouldLisn = false;
+  late Future<List<RecipeWithDetails>> future;
+
   SpoonacularRecipes spoonacularRecipes = SpoonacularRecipes();
-   Future<List<RecipeWithDetails>> fetchData(String searchText) async {
+  Future<List<RecipeWithDetails>> fetchData(String searchText) async {
     try {
       searchResult =
           await spoonacularRecipes.fetchRecipesByIngredients(searchText);
@@ -77,14 +82,12 @@ class _SearchPageState extends State<SearchPage> {
                               color: Colors.white),
                           child: TextField(
                             controller: searchInputController,
-                            onChanged: (value)async {
-
-                              Future.delayed(const Duration(seconds: 2), (){
-
-                                fetchData(searchInputController.text);
+                            onSubmitted: (value) async {
+                              print(value);
+                              Future<List<RecipeWithDetails>> future2  =  fetchData(searchInputController.text);
+                              setState(() {
+                                future = future2;
                               });
-
-                              setState(() {});
                             },
                             style: const TextStyle(
                                 color: Color.fromARGB(255, 246, 246, 246),
@@ -95,8 +98,9 @@ class _SearchPageState extends State<SearchPage> {
                             decoration: InputDecoration(
                               hintText: 'What do you want to eat?',
                               hintStyle: TextStyle(
-                                  color: const Color.fromARGB(255, 255, 255, 255)
-                                      .withOpacity(0.2)),
+                                  color:
+                                      const Color.fromARGB(255, 255, 255, 255)
+                                          .withOpacity(0.2)),
                               prefixIconConstraints:
                                   const BoxConstraints(maxHeight: 20),
                               contentPadding:
@@ -165,16 +169,19 @@ class _SearchPageState extends State<SearchPage> {
                           },
                           style: OutlinedButton.styleFrom(
                             side: BorderSide(
-                                color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.9),
+                                color: const Color.fromARGB(255, 0, 0, 0)
+                                    .withOpacity(0.9),
                                 width: 1),
                           ),
                           child: Text(
                             // popularRecipeKeyword[index],
                             'Index of popular recipe',
                             style: TextStyle(
-                                color: const Color.fromARGB(255, 38, 37, 37).withOpacity(0.7),
+                                color: const Color.fromARGB(255, 38, 37, 37)
+                                    .withOpacity(0.7),
                                 // backgroundColor: const Color.fromARGB(255, 87, 84, 84),
-                                fontWeight: FontWeight.w400, fontSize: 16),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16),
                           ),
                         ),
                       );
@@ -200,24 +207,31 @@ class _SearchPageState extends State<SearchPage> {
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                 ),
-
-                 ListView.separated(
-                  shrinkWrap: true,
-                   itemCount:  searchResult.length,
-                  //itemCount: 5,
-                  physics: const NeverScrollableScrollPhysics(),
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(height: 16);
-                  },
-                  itemBuilder: (context, index) {
-                    return  RecipeTile(
-                         data: searchResult[index],
-
-                        );
+                FutureBuilder(
+                  future: fetchData(searchInputController.text),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      List<RecipeWithDetails>? searchResult = snapshot.data;
+                      return ListView.separated(
+                        shrinkWrap: true,
+                        itemCount: searchResult!.length,
+                        //itemCount: 5,
+                        physics: const NeverScrollableScrollPhysics(),
+                        separatorBuilder: (context, index) {
+                          return const SizedBox(height: 16);
+                        },
+                        itemBuilder: (context, index) {
+                          return RecipeTile(
+                            data: searchResult[index],
+                          );
+                        },
+                      );
+                    }
+                    return Container();
                   },
                 ),
                    const Center(
-                    child: CircularProgressIndicator()),
+                    child: CircularProgressIndicator())
 
               ],
             ),
