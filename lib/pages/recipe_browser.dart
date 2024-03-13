@@ -64,27 +64,68 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                           showModalBottomSheet<void>(
                             context: context,
                             builder: (context) => Container(
-                              height: 400,
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(recipeName),
-                                    SizedBox(
-                                      height: 16,
-                                    ),
-                                    Text(ingridients),
-                                    SizedBox(
-                                      height: 16,
-                                    ),
-                                    Text(instructions),
-                                    TextButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: Text('close'))
-                                  ],
+                              height: 800,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        recipeName,
+                                        style: TextStyle(
+                                            fontSize: 26,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            12, 2, 12, 0),
+                                        child: Divider(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 16,
+                                      ),
+                                      Text(
+                                        'Ingridients: ',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                      SizedBox(
+                                        height: 12,
+                                      ),
+                                      Text(
+                                        ingridients,
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(
+                                        height: 16,
+                                      ),
+                                      Text(
+                                        'Directions: ',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                      SizedBox(
+                                        height: 12,
+                                      ),
+                                      Text(
+                                        instructions,
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: TextButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            child: Text(
+                                              'close',
+                                              style: TextStyle(fontSize: 18),
+                                            )),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
