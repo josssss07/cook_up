@@ -67,9 +67,16 @@ class RecipeTileExtended extends StatelessWidget {
                                       height: 12,
                                     ),
                                     Text(
-                                      'ingridnients go here',
+                                      '',
                                       style: TextStyle(fontSize: 20),
-                                    ),
+                                    ),Column(
+                                          children: ingredients!
+                                            .map((string) => Text(
+                                                string,
+                                                  style: TextStyle(fontSize: 18),
+                                                        ))
+                                              .toList(),
+                                                ),
                                     SizedBox(
                                       height: 16,
                                     ),
