@@ -1,5 +1,8 @@
 import 'package:cook_up/fetch_api_data/recipie_details.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:cook_up/HiveManager.dart';
 
 class RecipeTile extends StatelessWidget {
   final RecipeWithDetails data;
