@@ -1,8 +1,10 @@
+import 'package:cook_up/fetch_api_data/recipie_details.dart';
 import 'package:flutter/material.dart';
 
 class RecipeTile extends StatelessWidget {
-  final data;
- const RecipeTile({
+  final RecipeWithDetails data;
+  
+ RecipeTile({
   Key? key, 
   required this.data,
 }) : super(key: key);
@@ -45,8 +47,8 @@ class RecipeTile extends StatelessWidget {
                     // Recipe title
                     Container(
                       margin: const EdgeInsets.only(bottom: 12),
-                      child: const Text(
-                        'Pancakes',
+                      child:  Text(
+                        data.title,
                         style: TextStyle(fontWeight: FontWeight.w600, fontFamily: 'inter', color: Colors.white),
                       ),
                     ),
