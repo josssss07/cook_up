@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'recipie_details.dart';
 
 class SpoonacularRecipes {
-  final String apiKey = " YOUR API KEY";
+  final String apiKey = " 2071c4b9f7d8458aaa08e3b2184e023e";
 
   Future<List<RecipeWithDetails>> fetchRecipesByIngredients(
       String ingredients) async {

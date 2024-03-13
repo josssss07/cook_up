@@ -1,0 +1,78 @@
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColor.primary,
+        elevation: 0,
+        centerTitle: true,
+        title: const Text('Search Recipe',
+            style: TextStyle(
+                fontFamily: 'inter',
+                fontWeight: FontWeight.w400,
+                fontSize: 20)),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
+      ),
+      body: FutureBuilder<List<RecipeWithDetails>>(
+        future: fetchData(searchInputController
+            .text), // Assuming fetchData returns a Future<List<YourDataType>>
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            // If the Future is still running, show a loading indicator
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            // If an error occurred, display an error message
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else {
+            // If the Future is completed successfully, render the ListView
+            final searchResult = snapshot.data;
+            return ListView(
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
+              children: [
+                // Section 1 - Search
+                Container(
+                    // Your existing search section widget...
+                    ),
+                // Section 2 - Search Result
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  width: MediaQuery.of(context).size.width,
+                  color: AppColor.primarySoft,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 15),
+                        child: const Text(
+                          'This is the result of your search..',
+                          style: TextStyle(color: Colors.grey, fontSize: 16),
+                        ),
+                      ),
+                      if (snapshot.hasData && searchResult != null)
+                        ListView.separated(
+                          shrinkWrap: true,
+                          itemCount: searchResult.toString().length,
+                          physics: const NeverScrollableScrollPhysics(),
+                          separatorBuilder: (context, index) {
+                            return const SizedBox(height: 16);
+                          },
+                          itemBuilder: (context, index) {
+                            return RecipeTile(
+                              data: searchResult[index],
+                            );
+                          },
+                        ),
+                      if (snapshot.connectionState == ConnectionState.waiting)
+                        Center(child: CircularProgressIndicator()),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          }
+        },
+      ),
+    );
+  }
