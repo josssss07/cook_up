@@ -69,14 +69,16 @@ class RecipeTileExtended extends StatelessWidget {
                                     Text(
                                       '',
                                       style: TextStyle(fontSize: 20),
-                                    ),Column(
-                                          children: ingredients!
-                                            .map((string) => Text(
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: ingredients!
+                                          .map((string) => Text(
                                                 string,
-                                                  style: TextStyle(fontSize: 18),
-                                                        ))
-                                              .toList(),
-                                                ),
+                                                style: TextStyle(fontSize: 18),
+                                              ))
+                                          .toList(),
+                                    ),
                                     SizedBox(
                                       height: 16,
                                     ),
@@ -142,30 +144,3 @@ class RecipeTileExtended extends StatelessWidget {
         ));
   }
 }
-
-
-
-// Container(
-//         height: 60,
-//         width: MediaQuery.of(context).size.width / 1.2,
-//         decoration: BoxDecoration(
-//             color: Colors.amber,
-//             boxShadow: [BoxShadow(color: Color.fromARGB(255, 224, 180, 123), spreadRadius: 3)],
-//             borderRadius: BorderRadius.circular(22)),
-//         child: Padding(
-//           padding: const EdgeInsets.all(8.0),
-//           child: Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//             children: [
-//               Text(
-//                 recipeName,
-//                 style: TextStyle(color: Colors.grey[100], fontSize: 18),
-//               ),
-//               Icon(
-//                 Icons.receipt,
-//                 color: Colors.white,
-//               )
-//             ],
-//           ),
-//         ),
-//       ),
