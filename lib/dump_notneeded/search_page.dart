@@ -36,6 +36,7 @@ class _SearchPageState extends State<SearchPage> {
       print("Error fetching data: $e");
       rethrow;
       // Handle error appropriately, e.g., show an error message
+      //nuh uh -j
     }
   }
 

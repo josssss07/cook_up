@@ -1,23 +1,4 @@
-// import 'package:cook_up/firebase_options.dart';
-import 'package:cook_up/firebase_options.dart';
-import 'package:cook_up/pages/profilepage.dart';
-import 'package:cook_up/pages/recipe_browser.dart';
-import 'package:cook_up/dump_notneeded/search_page.dart';
-import 'package:cook_up/utils/AppColor.dart';
-import 'package:cook_up/utils/app_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:cook_up/HiveManager.dart';
-// import 'firebase_options.dart';
-// import 'package:hungry/views/screens/auth/welcome_page.dart';
-
-void main() async {
-
-List<Recipe> recipes = [
-    Recipe(
+Recipe(
     name: "Pancakes",
     ingredients: [
       "all-purpose flour", "sugar",
@@ -34,8 +15,9 @@ List<Recipe> recipes = [
     directions: "Preheat oven to 200 degrees. Have a baking sheet or heatproof platter ready to keep cooked pancakes warm in the oven...",
     pk: 0
     ),
+
 Recipe(
-    name: "Overnight oats",
+    name: "Overnight oats"",
     ingredients: [
       "all-purpose flour",
       "sugar",
@@ -49,23 +31,14 @@ Recipe(
       "butter",
       "honey"
     ],
-    directions:"Preheat oven to 200 degrees. Have a baking sheet or heatproof platter ready to keep cooked pancakes warm in the oven.In a small bowl, whisk together flour, sugar, baking powder, and salt; set aside.In a medium bowl, whisk together milk, butter (or oil), and egg.Add dry ingredients to milk mixture; whisk until just moistened. (Do not overmix; a few small lumps are fine.)\nIn a small bowl, whisk together flour, sugar, baking powder, and salt; set aside.\nIn a medium bowl, whisk together milk, butter (or oil), and egg.\nAdd dry ingredients to milk mixture; whisk until just moistened. (Do not overmix; a few small lumps are fine.)\nHeat a large skillet (nonstick or cast-iron) or griddle over medium. Fold a sheet of paper towel in half, and moisten with oil; carefully rub skillet with oiled paper towel.\nFor each pancake, spoon 2 to 3 tablespoons of batter onto skillet, using the back of the spoon to spread batter into a round (you should be able to fit 2 to 3 in a large skillet).\nCook until surface of pancakes have some bubbles and a few have burst, 1 to 2 minutes.\nFlip carefully with a thin spatula, and cook until browned on the underside, 1 to 2 minutes more.\nTransfer to a baking sheet or platter; cover loosely with aluminum foil, and keep warm in oven. Continue with more oil and remaining batter. (You'll have 12 to 15 pancakes.) Serve warm, with desired toppings.",
+    directions:Preheat oven to 200 degrees. Have a baking sheet or heatproof platter ready to keep cooked pancakes warm in the oven.In a small bowl, whisk together flour, sugar, baking powder, and salt; set aside.In a medium bowl, whisk together milk, butter (or oil), and egg.Add dry ingredients to milk mixture; whisk until just moistened. (Do not overmix; a few small lumps are fine.)\nIn a small bowl, whisk together flour, sugar, baking powder, and salt; set aside.\nIn a medium bowl, whisk together milk, butter (or oil), and egg.\nAdd dry ingredients to milk mixture; whisk until just moistened. (Do not overmix; a few small lumps are fine.)\nHeat a large skillet (nonstick or cast-iron) or griddle over medium. Fold a sheet of paper towel in half, and moisten with oil; carefully rub skillet with oiled paper towel.\nFor each pancake, spoon 2 to 3 tablespoons of batter onto skillet, using the back of the spoon to spread batter into a round (you should be able to fit 2 to 3 in a large skillet).\nCook until surface of pancakes have some bubbles and a few have burst, 1 to 2 minutes.\nFlip carefully with a thin spatula, and cook until browned on the underside, 1 to 2 minutes more.\nTransfer to a baking sheet or platter; cover loosely with aluminum foil, and keep warm in oven. Continue with more oil and remaining batter. (You'll have 12 to 15 pancakes.) Serve warm, with desired toppings."
     pk: 1
     ),
 
-Recipe(
-    name: "Scrambled eggs",
-    ingredients: [
-      "eggs",
-      "milk",
-      "sriracha sauce",
-      "salt",
-      "pepper",
-      "butter"
-    ],
-    directions: "Melt butter in nonstick pan over medium-low heat, tilting the pan to cover surface entirely with butter. Cook egg mixture in pan, stirring to slowly scramble eggs, until the eggs are fully set, 3 to 5 minutes.",
-    pk: 2
-    ),
+
+
+
+
 Recipe(
     name: "Besan chilla",
     ingredients: [
@@ -86,6 +59,22 @@ Recipe(
     ],
     directions: "Add besan (gram flour), cumin seeds, and salt in a mixing bowl. You can add a pinch of turmeric powder for color and flavor.\n2. Add water and whisk the mixture to make a smooth batter. The batter should have a pouring consistency, similar to dosa batter.\n3. Add the chopped onions, tomatoes, bell peppers, green chilies, grated ginger, and fresh coriander leaves to the batter. Mix everything well.\n4. Heat a non-stick skillet or griddle (tava) and lightly grease it with oil or ghee.\n5. Pour a ladle full of the besan batter onto the skillet and spread it gently to form a round chilla. You can make them as thick or as thin as you prefer.\n6. Drizzle a few drops of oil or ghee around the edges of the chilla and a few drops on top.\nCook the chilla on medium heat until the base turns golden brown and crispy. Flip it and cook the other side until it's cooked and lightly browned.\n8. Remove the besan chilla from the griddle and serve hot with your favorite chutney or yogurt.\nYou can also experiment with different toppings, such as grated cheese, spinach, or grated paneer, to make variations of this healthy dish. Enjoy your quick and nutritious besan chilla!",
     pk: 3
+    ),
+
+
+
+Recipe(
+    name: "Scrambled eggs",
+    ingredients: [
+      "eggs",
+      "milk",
+      "sriracha sauce",
+      "salt",
+      "pepper",
+      "butter"
+    ],
+    directions: "Melt butter in nonstick pan over medium-low heat, tilting the pan to cover surface entirely with butter. Cook egg mixture in pan, stirring to slowly scramble eggs, until the eggs are fully set, 3 to 5 minutes.",
+    pk: 2
     ),
 
 
@@ -139,6 +128,9 @@ Recipe(
     directions: "1. Cook the pasta according to package instructions. Add mixed vegetables in the last 3-4 minutes of cooking. Drain and set aside.\n2. In a saucepan, melt butter over medium heat. Add flour and stir continuously for 1-2 minutes to make a roux.\n3. Gradually whisk in milk to the roux, ensuring no lumps form. Cook until the mixture thickens.\n4. Add grated Parmesan cheese, garlic powder, onion powder, nutmeg (if using), salt, and pepper. Stir until the cheese is melted and the sauce is smooth.\n5. Combine the cooked pasta and vegetables with the Alfredo sauce. Toss until everything is well coated.\n6. Serve the veg Alfredo pasta hot, garnished with extra cheese if desired. Enjoy your creamy and delicious dish!",
     pk: 5
     ),
+
+
+
 Recipe(
     name: "Banana Bread",
     ingredients: [
@@ -324,30 +316,32 @@ Recipe(
     ),
 
 
-Recipe(
-    name: "Gobi Manchurian",
-    ingredients: [
-      "cauliflower",
-      "corn flour",
-      "all-purpose flour",
-      "salt",
-      "pepper",
-      "ginger-garlic paste",
-      "oil",
-      "garlic",
-      "ginger",
-      "green chilies",
-      "onion",
-      "bell peppers",
-      "soy sauce",
-      "chilli sauce",
-      "tomato ketchup",
-      "vinegar",
-      "spring onions"
-    ],
-    directions: "Mix cauliflower florets with corn flour, all-purpose flour, salt, pepper, and ginger-garlic paste to form a thick batter. Deep fry the cauliflower florets until golden brown and crispy.In a separate pan, heat oil, add chopped garlic, ginger, green chilies, and sauté. Add chopped onions, bell peppers, and sauté until they soften.Add soy sauce, chili sauce, ketchup, vinegar, salt, and pepper to taste.Toss in the fried cauliflower florets and mix well until they are coated with the sauce.Garnish with spring onions and serve hot as an appetizer.",
-    pk: 16  
-    ),
+  Recipe(
+      name: "Gobi Manchurian",
+      ingredients: [
+        "cauliflower",
+        "corn flour",
+        "all-purpose flour",
+        "salt",
+        "pepper",
+        "ginger-garlic paste",
+        "oil",
+        "garlic",
+        "ginger",
+        "green chilies",
+        "onion",
+        "bell peppers",
+        "soy sauce",
+        "chilli sauce",
+        "tomato ketchup",
+        "vinegar",
+        "spring onions"
+      ],
+      directions: "Mix cauliflower florets with corn flour, all-purpose flour, salt, pepper, and ginger-garlic paste to form a thick batter. Deep fry the cauliflower florets until golden brown and crispy.In a separate pan, heat oil, add chopped garlic, ginger, green chilies, and sauté. Add chopped onions, bell peppers, and sauté until they soften.Add soy sauce, chili sauce, ketchup, vinegar, salt, and pepper to taste.Toss in the fried cauliflower florets and mix well until they are coated with the sauce.Garnish with spring onions and serve hot as an appetizer.",
+      pk: 16  
+      ),
+
+
   Recipe(
       name: "Aloo Gobi ",
       ingredients: [
@@ -400,18 +394,6 @@ Recipe(
       directions: "In a non-stick pan, combine desiccated coconut and condensed milk.Cook over low heat, stirring continuously, until the mixture thickens and starts to leave the sides of the pan.Remove from heat, add cardamom powder, and mix well. Let the mixture cool slightly.Grease your palms with ghee or butter and shape the mixture into small balls (ladoos). Allow them to cool completely before serving.",
       pk: 20
       ),
-      Recipe(
-    name: "Date and Nut ladoo",
-    ingredients: [
-        "dates",
-        "nuts",
-        "almonds",
-        "cashews",
-        "walnuts"
-    ],
-    directions: "In a food processor, blend the dates until they form a sticky paste.Add finely chopped nuts to the date paste and pulse until well combined.Take small portions of the mixture and roll them into balls using your hands.Optional: Roll the balls in desiccated coconut for coating.Place the balls on a plate and refrigerate for about 30 minutes to firm up before serving. Enjoy!",
-    pk: 21
-  ),
 
   Recipe(
       name: "Sticky Toffee Pudding",
@@ -452,6 +434,21 @@ Recipe(
     directions: "Start by boiling the peas for 3-4 minute, in the same water add the spinach for 30 seconds and transfer everything in ice cold water.\n- Add that to a blender with coriander, green chilli, ginger garlic and blend it to make a smooth paste\n- In a plate grate potatoes and paneer together\n- To that add green paste, roasted besan, spices like chilli powder, amchur powder, jeera powder, garam masala, salt and pepper. \nBind it until nicely combined, make small tikkis, add half a piece of cashew and pan fry it on both sides\n- For assembling, heat up the roti, put some beetroot dip at the base, break the tikkis and place them in a straight line, on top add pickle onions, chaat masala and some chopped coriander\n- Squeeze some lemon juice on top and your hara bhara roll is ready to be devoured!\n",
     pk: 23
   ),
+
+Recipe(
+    name: "Date and Nut ladoo",
+    ingredients: [
+        "dates",
+        "nuts",
+        "almonds",
+        "cashews",
+        "walnuts"
+    ],
+    directions: "In a food processor, blend the dates until they form a sticky paste.Add finely chopped nuts to the date paste and pulse until well combined.Take small portions of the mixture and roll them into balls using your hands.Optional: Roll the balls in desiccated coconut for coating.Place the balls on a plate and refrigerate for about 30 minutes to firm up before serving. Enjoy!",
+    pk: 21
+  ),
+
+
 
 Recipe(
     name: "Peri Peri Broccoli Bowl",
@@ -658,45 +655,7 @@ Recipe(
         "creammalai"
     ],
     directions: "Take whole urad and rajma in a colander and rinse under running cold water until water runs clear. \nMassage the lentils lightly using fingers while rinsing. \nAlternatively, you can rinse them in a bowl 2-3 times until the water is not cloudy anymore.\n\nSoak in enough water (2 inches above the lentils) for 8 hours or overnight. They will get doubled in size.\nDrain and discard the soaking water. Take soaked lentils in a pressure cooker (or instant pot) along with fresh water.\nStovetop pressure cooker: Cook on medium heat for 10-12 whistles (that is about 15 minutes).\nInstant pot: Cook on manual (high pressure) for 20 minutes.\nLet the pressure go down by itself and then open the lid. \nCheck by pressing a lentil or bean, it should mash easily without any effort.\nHeat the oil in a pan on medium heat.\nOnce hot add whole spices (cloves, cinnamon, black cardamoms, bay leaf). \nSaute for 40-60 seconds or until spices are aromatic.\nAdd chopped onion and sprinkle a little salt to speed up the cooking process. \nCook for 5 minutes or until onions is soft and light brown in color.\nAdd ginger-garlic paste. Saute for a minute or until the raw smell of ginger garlic goes away.\nAdd tomato puree and slit green chili. Cook until most of the water is evaporated and it becomes a thick paste.\nAdd red chili powder and smoked paprika. Mix and cook for a minute.\nAdd boiled lentils, remaining salt and little more water. Mix well and let it comes to a boil.\nAdd butter and let it simmer on low heat for 25-30 minutes. \nDo stir in between to make sure that it is not sticking to the bottom of the pan. \nIf it looks too thick then you can add a splash of more water.\nAdd garam masala and crushed kasoori methi. Mix well.\nAdd heavy cream. Mix and again simmer for 10 minutes on low.\nLastly, garnish dal makhani with freshly chopped cilantro.",
-    pk: 31)
-];
-
-
-  await HiveManager.init();
-  final myBox = HiveManager.myBox;
-  //id , title, image,ingredients , recipe
-    await HiveManager.saveRecipes(recipes);
-
-  // Retrieve recipes from Hive
-  List<Recipe> storedRecipes = HiveManager.getRecipes();
-
-   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.black,
-    systemNavigationBarIconBrightness: Brightness.light,
-  ));
-
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    pk: 31
   );
 
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Open Sans',
-        //scaffoldBackgroundColor: AppColor.primarySoft,
-      ),
-      //home: const RecipeBrowser(), //until navbar is completedw
-      home: const Appbar(),
-    );
-  }
-}

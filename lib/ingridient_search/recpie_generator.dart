@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:cook_up/HiveManager.dart';
-import 'recpie_for_disaster.dart';
+import 'recpie_results_db.dart';
 
 class RecipeGenerator extends StatefulWidget {
   const RecipeGenerator({super.key});
@@ -15,17 +15,16 @@ class RecipeGenerator extends StatefulWidget {
 }
 
 class _RecipeGeneratorState extends State<RecipeGenerator> {
-   List<Recipe>? result = [];
-      List<Recipe>recipeget = [];
+  List<Recipe>? result = [];
+  List<Recipe> recipeget = [];
   late List<Recipe> storedRecipes1;
   List<Recipe>? find(String ingredients) {
     List<Recipe> storedRecipes = HiveManager.getRecipes();
     for (Recipe recipe in storedRecipes) {
-      for(int i= 0; i<recipe.ingredients.length ; i++){
-        if(recipe.ingredients[i] == ingredients){
+      for (int i = 0; i < recipe.ingredients.length; i++) {
+        if (recipe.ingredients[i] == ingredients) {
           // print('Ingredients: ${recipe.ingredients}');
           recipeget.add(recipe);
-
         }
       }
       // print('Ingredients: ${recipe.ingredients[0]}');
@@ -33,7 +32,7 @@ class _RecipeGeneratorState extends State<RecipeGenerator> {
       // print('PK: ${recipe.pk}');
       // print('-------------------------------------');
     }
-              return recipeget;
+    return recipeget;
   }
 
   TextEditingController ingridients = TextEditingController();
@@ -51,8 +50,8 @@ class _RecipeGeneratorState extends State<RecipeGenerator> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            result = find(ingridients.text); 
-            recipeget = [];         
+            result = find(ingridients.text);
+            recipeget = [];
           });
         },
         child: Icon(
@@ -75,6 +74,7 @@ class _RecipeGeneratorState extends State<RecipeGenerator> {
                   child: TextField(
                     controller: ingridients,
                     decoration: InputDecoration(
+                      hintText: 'Demo version, please enter one ingridient',
                       border: OutlineInputBorder(),
                       focusColor: Colors.amber,
                       fillColor: Colors.amber,
@@ -84,26 +84,26 @@ class _RecipeGeneratorState extends State<RecipeGenerator> {
                   ),
                 ),
               ),
-
               Container(
                 width: MediaQuery.sizeOf(context).width / 1.2,
-                height:MediaQuery.sizeOf(context).height,
+                height: MediaQuery.sizeOf(context).height,
                 child: ListView.builder(
-                  itemCount: result!.length,
-                  itemBuilder: (context , index){
-                    return RecipeTileExtended(name:result![index]!.name, ingredients:result![index]!.ingredients, description: result![index]!.directions);
-                  }
-                    
+                    itemCount: result!.length,
+                    itemBuilder: (context, index) {
+                      return RecipeTileExtended(
+                          name: result![index]!.name,
+                          ingredients: result![index]!.ingredients,
+                          description: result![index]!.directions);
+                    }
 
-                      //add ui for it
+                    //add ui for it
 //  print('Recipe Name: ${recipe.name}');
 //     print('Ingredients: ${recipe.ingredients}');
 //     print('Directions: ${recipe.directions}');
 //     print('PK: ${recipe.pk}');
 //     print('-------------------------------------');
-    
-                  
-                ),
+
+                    ),
               )
             ],
           ),
