@@ -1,7 +1,7 @@
 // import 'package:cook_up/firebase_options.dart';
 import 'package:cook_up/pages/profilepage.dart';
 import 'package:cook_up/pages/recipe_browser.dart';
-import 'package:cook_up/pages/search_page.dart';
+import 'package:cook_up/dump_notneeded/search_page.dart';
 import 'package:cook_up/utils/AppColor.dart';
 import 'package:cook_up/utils/app_bar.dart';
 import 'package:flutter/material.dart';
