@@ -5,7 +5,12 @@ class UserInfoTile extends StatelessWidget {
   final String label, value;
   final EdgeInsetsGeometry margin, padding;
   final Color valueBackground;
-  UserInfoTile({required this.label, required this.value, required this.padding, required this.margin, required this.valueBackground});
+  const UserInfoTile(
+      {super.key, required this.label,
+      required this.value,
+      required this.padding,
+      required this.margin,
+      required this.valueBackground});
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +23,29 @@ class UserInfoTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text('$label', style: TextStyle(color: AppColor.primary, fontSize: 16)),
+            padding: const EdgeInsets.only(left: 20),
+            child: Text(label,
+                style: const TextStyle(color: Colors.amber, fontSize: 16)),
           ),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                color: AppColor.primary,
+                color: Colors.amber,
                 width: 0.5,
               ),
-              color: AppColor.primarySoft,
+              color: Colors.white,
             ),
-            margin: EdgeInsets.only(top: 6),
+            margin: const EdgeInsets.only(top: 6),
             width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             // color: valueBackground ?? AppColor.primarySoft,
-            child: Text('$value', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, fontFamily: 'inter', color: Colors.white)),
+            child: Text(value,
+                style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'inter',
+                    color: Colors.amber)),
           )
         ],
       ),

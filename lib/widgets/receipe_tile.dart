@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RecipeTile extends StatelessWidget {
   final data;
- RecipeTile({
+ const RecipeTile({
   Key? key, 
   required this.data,
 }) : super(key: key);

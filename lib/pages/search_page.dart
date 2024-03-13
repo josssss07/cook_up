@@ -1,7 +1,5 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:cook_up/utils/AppColor.dart';
 import 'package:cook_up/models/search_filter_model.dart';
 import 'package:cook_up/widgets/receipe_tile.dart';
 import 'package:flutter/services.dart';
@@ -28,7 +26,7 @@ class _SearchPageState extends State<SearchPage> {
       return searchResult;
     } catch (e) {
       print("Error fetching data: $e");
-      throw e;
+      rethrow;
       // Handle error appropriately, e.g., show an error message
     }
   }
@@ -39,7 +37,7 @@ class _SearchPageState extends State<SearchPage> {
     print(searchInputController.text.isEmpty);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
+        backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
         title: const Text('Search Recipe',
@@ -57,7 +55,7 @@ class _SearchPageState extends State<SearchPage> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: 145,
-            color: AppColor.primary,
+            color: Colors.white,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +74,7 @@ class _SearchPageState extends State<SearchPage> {
                           margin: const EdgeInsets.only(right: 15),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: AppColor.secondarybg),
+                              color: Colors.white),
                           child: TextField(
                             controller: searchInputController,
                             onChanged: (value)async {
@@ -115,7 +113,7 @@ class _SearchPageState extends State<SearchPage> {
                           showModalBottomSheet(
                               context: context,
                               // backgroundColor: Colors.white,
-                              backgroundColor: AppColor.secondarybg,
+                              backgroundColor: Colors.white,
                               shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(20),
@@ -130,7 +128,7 @@ class _SearchPageState extends State<SearchPage> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: AppColor.secondarybg,
+                            color: Colors.white,
                           ),
                           child: Image.asset(
                             'assets/icons/edit.png',
@@ -190,7 +188,7 @@ class _SearchPageState extends State<SearchPage> {
           Container(
             padding: const EdgeInsets.all(16),
             width: MediaQuery.of(context).size.width,
-            color: AppColor.primarySoft,
+            color: Colors.white,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -218,7 +216,7 @@ class _SearchPageState extends State<SearchPage> {
                         );
                   },
                 ),
-                   Center(
+                   const Center(
                     child: CircularProgressIndicator()),
 
               ],

@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cook_up/utils/AppColor.dart';
 import 'package:cook_up/widgets/user_info_tile.dart';
 
@@ -12,8 +11,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //brightness: Brightness.dark,
-        backgroundColor: Colors.white,
         elevation: 2,
         centerTitle: true,
         title: const Text('My Profile',
@@ -96,34 +93,34 @@ class ProfilePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 UserInfoTile(
                   margin: EdgeInsets.only(bottom: 16),
                   label: 'Email',
-                  value: 'reinazahradummy@gmail.com',
+                  value: 'Testemail@email.com',
                   padding: EdgeInsets.all(16.0),
-                  valueBackground: AppColor.secondarybg,
+                  valueBackground: Colors.amber,
                 ),
                 UserInfoTile(
                   margin: EdgeInsets.only(bottom: 16),
                   label: 'Full Name',
-                  value: 'Reina Zahra Azizah',
+                  value: 'demo page',
                   padding: EdgeInsets.all(16.0),
-                  valueBackground: AppColor.secondarybg,
+                  valueBackground: Colors.amber,
                 ),
                 UserInfoTile(
                   margin: EdgeInsets.only(bottom: 16),
                   label: 'Subscription Type',
                   value: 'Premium Subscription',
                   padding: EdgeInsets.all(16.0),
-                  valueBackground: AppColor.secondarybg,
+                  valueBackground: Colors.amber,
                 ),
                 UserInfoTile(
                   margin: EdgeInsets.only(bottom: 16),
                   label: 'Subscription Time',
                   value: 'Until 22 Oct 2021',
                   padding: EdgeInsets.all(16.0),
-                  valueBackground: AppColor.secondarybg,
+                  valueBackground: Colors.amber,
                 ),
               ],
             ),

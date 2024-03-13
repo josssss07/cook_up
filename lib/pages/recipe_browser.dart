@@ -51,7 +51,6 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                     documentSnapshot.data() as Map<String, dynamic>;
                 String recipeName = data['name'];
                 int recipeindex = data['id'];
-                //#TODO: GET THE RECIPE INSTRUCTIONS
                 String instructions = data['directions'];
                 String ingridients = data['ingredients'];
                 return ListTile(
@@ -63,7 +62,7 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                         onTap: () {
                           showModalBottomSheet<void>(
                             context: context,
-                            builder: (context) => Container(
+                            builder: (context) => SizedBox(
                               height: 800,
                               child: Padding(
                                 padding: const EdgeInsets.all(12.0),
