@@ -28,7 +28,8 @@ class _AppbarState extends State<Appbar> {
       body: _widgetOptions.elementAt(_indexSelected),
       bottomNavigationBar: GNav(
         haptic: true,
-        rippleColor:  Color.fromARGB(255, 221, 214, 191),
+        backgroundColor: Colors.white,
+        rippleColor: Color.fromARGB(255, 221, 214, 191),
         hoverColor: Color.fromARGB(255, 205, 192, 11),
         gap: 6,
         activeColor: Colors.black,
