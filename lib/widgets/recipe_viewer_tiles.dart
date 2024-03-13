@@ -13,9 +13,9 @@ class RecipeViewer extends StatelessWidget {
         height: 60,
         width: MediaQuery.of(context).size.width / 1.2,
         decoration: BoxDecoration(
-            color: Colors.grey[800],
-            boxShadow: [BoxShadow(color: Colors.amber, spreadRadius: 3)],
-            borderRadius: BorderRadius.circular(20)),
+            color: Colors.amber,
+            boxShadow: [BoxShadow(color: Color.fromARGB(255, 224, 180, 123), spreadRadius: 3)],
+            borderRadius: BorderRadius.circular(22)),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -23,10 +23,7 @@ class RecipeViewer extends StatelessWidget {
             children: [
               Text(
                 recipeName,
-                style: TextStyle(
-                  color: Colors.grey[100],
-                  fontSize: 18
-                ),
+                style: TextStyle(color: Colors.grey[100], fontSize: 18),
               ),
               Icon(
                 Icons.receipt,

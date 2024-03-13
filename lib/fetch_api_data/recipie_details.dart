@@ -18,7 +18,3 @@ class RecipeWithDetails {
   }
 }
 
-
-
-
-// String = "salt chicken cheese pepper"

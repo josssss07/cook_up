@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable, library_private_types_in_public_api
+// ignore_for_file: unused_local_variable, library_private_types_in_public_api, prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cook_up/services/firestore.dart';
@@ -23,9 +23,9 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 249, 246, 238),
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
+        //backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
         title: const Text('Recipes',
@@ -51,13 +51,46 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                     documentSnapshot.data() as Map<String, dynamic>;
                 String recipeName = data['name'];
                 int recipeindex = data['id'];
-
+                //#TODO: GET THE RECIPE INSTRUCTIONS
+                String instructions = data['directions'];
+                String ingridients = data['ingredients'];
                 return ListTile(
                   title: GestureDetector(
                     onTap: () {
                       print(recipeindex);
                     },
-                    child: RecipeViewer(recipeName: recipeName),
+                    child: GestureDetector(
+                        onTap: () {
+                          showModalBottomSheet<void>(
+                            context: context,
+                            builder: (context) => Container(
+                              height: 400,
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(recipeName),
+                                    SizedBox(
+                                      height: 16,
+                                    ),
+                                    Text(ingridients),
+                                    SizedBox(
+                                      height: 16,
+                                    ),
+                                    Text(instructions),
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text('close'))
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        child: RecipeViewer(recipeName: recipeName)),
                   ),
                 );
               },
@@ -70,4 +103,3 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
     );
   }
 }
-
