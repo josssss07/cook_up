@@ -1,5 +1,5 @@
 // import 'package:cook_up/firebase_options.dart';
-import 'package:cook_up/firebase_options.dart';
+// import 'package:cook_up/firebase_options.dart';
 import 'package:cook_up/pages/profilepage.dart';
 import 'package:cook_up/pages/recipe_browser.dart';
 import 'package:cook_up/dump_notneeded/search_page.dart';
@@ -677,9 +677,9 @@ Recipe(
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 
   runApp(const MyApp());
 }
