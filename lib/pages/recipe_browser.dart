@@ -63,6 +63,8 @@ class _RecipeBrowserState extends State<RecipeBrowser> {
                     },
                     child: GestureDetector(
                         onTap: () {
+                          // Navigator.of(context)
+                          //     .push(MaterialPageRoute(builder: (_)));
                           showModalBottomSheet<void>(
                             context: context,
                             builder: (context) => SizedBox(

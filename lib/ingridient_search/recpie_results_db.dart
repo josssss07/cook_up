@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:cook_up/ingridient_search/recpieRes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -32,84 +33,93 @@ class RecipeTileExtended extends StatelessWidget {
                   SingleChildScrollView(
                     child: GestureDetector(
                       onTap: () {
-                        showModalBottomSheet<void>(
-                          context: context,
-                          builder: (context) => Container(
-                            height: 900,
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      name!,
-                                      style: TextStyle(
-                                          fontSize: 26,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          12, 2, 12, 0),
-                                      child: Divider(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 16,
-                                    ),
-                                    Text(
-                                      'Ingridients: ',
-                                      style: TextStyle(fontSize: 18),
-                                    ),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      '',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                    Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: ingredients!
-                                          .map((string) => Text(
-                                                string,
-                                                style: TextStyle(fontSize: 18),
-                                              ))
-                                          .toList(),
-                                    ),
-                                    SizedBox(
-                                      height: 16,
-                                    ),
-                                    Text(
-                                      'Directions: ',
-                                      style: TextStyle(fontSize: 18),
-                                    ),
-                                    SizedBox(
-                                      height: 12,
-                                    ),
-                                    Text(
-                                      description,
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: TextButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text(
-                                            'close',
-                                            style: TextStyle(fontSize: 18),
-                                          )),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => Result(
+                                name: name!,
+                                ingridients: ingredients,
+                                directions: description)));
+
+                        // showModalBottomSheet<void>(
+                        //   context: context,
+                        //   builder: (context) => Container(
+                        //     height: 900,
+                        //     child: Padding(
+                        //       padding: const EdgeInsets.all(12.0),
+                        //       child: SingleChildScrollView(
+                        //         child: Column(
+                        //           mainAxisAlignment: MainAxisAlignment.center,
+                        //           mainAxisSize: MainAxisSize.min,
+                        //           children: [
+                        //             Text(
+                        //               name!,
+                        //               style: TextStyle(
+                        //                   fontSize: 26,
+                        //                   fontWeight: FontWeight.bold),
+                        //             ),
+                        //             Padding(
+                        //               padding: const EdgeInsets.fromLTRB(
+                        //                   12, 2, 12, 0),
+                        //               child: Divider(
+                        //                 color: Colors.black,
+                        //               ),
+                        //             ),
+                        //             SizedBox(
+                        //               height: 16,
+                        //             ),
+                        //             Text(
+                        //               'Ingridients: ',
+                        //               style: TextStyle(fontSize: 18),
+                        //             ),
+                        //             SizedBox(
+                        //               height: 12,
+                        //             ),
+                        //             Text(
+                        //               '',
+                        //               style: TextStyle(fontSize: 20),
+                        //             ),
+                        //             Column(
+                        //               mainAxisAlignment:
+                        //                   MainAxisAlignment.center,
+                        //               crossAxisAlignment:
+                        //                   CrossAxisAlignment.start,
+                        //               children: ingredients!
+                        //                   .map((string) => Text(
+                        //                         string,
+                        //                         style: TextStyle(fontSize: 18),
+                        //                       ))
+                        //                   .toList(),
+                        //             ),
+                        //             SizedBox(
+                        //               height: 16,
+                        //             ),
+                        //             Text(
+                        //               'Directions: ',
+                        //               style: TextStyle(fontSize: 18),
+                        //             ),
+                        //             SizedBox(
+                        //               height: 12,
+                        //             ),
+                        //             Text(
+                        //               description,
+                        //               style: TextStyle(fontSize: 20),
+                        //             ),
+                        //             Padding(
+                        //               padding: const EdgeInsets.all(8.0),
+                        //               child: TextButton(
+                        //                   onPressed: () {
+                        //                     Navigator.pop(context);
+                        //                   },
+                        //                   child: Text(
+                        //                     'close',
+                        //                     style: TextStyle(fontSize: 18),
+                        //                   )),
+                        //             )
+                        //           ],
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ),
+                        // );
                       },
                       child: Container(
                           height: 60,
